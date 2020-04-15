@@ -104,6 +104,25 @@
     <div id = "Menu" class = "container-fluid text-center">
       <h2>Menu</h2>
       <br>
+
+      <input id="searchbar" onsearch="send_request_NASA()" type="text"
+        name="search" placeholder="Search NASA images and videos...." >
+        <script>
+          function send_request_NASA() {
+            fetch("https://images-api.nasa.gov/search?q=")
+            .then(function(response) {
+              // SUCCESS RESPONSE
+              let image1href = response.collection.items[1].links[1].href;
+              })
+              .catch(function(response) {
+              // FAILURE RESPONSE
+                console.log('Error! Please try again');
+              });
+          }
+        </script>
+        <br>
+        <img src= image1href alt = "searchImage" >
+
       <div class ="row">
         <div id = "Breakfast" class = "col-sm-4">
           <h4>Breakfast</h4>
