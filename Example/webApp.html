@@ -28,7 +28,7 @@
     firebase.initializeApp(config);
     </script>
   </head>
-  <body id = "homePage" data-spy="scroll" data-target=".navbar" data-offset="50">
+  <body id = "homePage" data-spy="scroll" data-target=".navbar" data-offset="50" onload="startTime()">
 		<iframe src="./Audio/fancy_music.mp3" allow="autoplay" style="display:none" id="iframeAudio"></iframe>
     <nav class = "navbar navbar-inverse navbar-fixed-top">
       <div class = "container-fluid">
@@ -101,9 +101,26 @@
 
     </div>
 
-    <div class="hover_img">
+    <div class="hover_img" style="font-size:50px">
       <a href="#">SHOWS IMAGE ON HOVER<span><img src="images/doggo.jpg" alt="image" height="100" /></span></a>
     </div>
+
+
+    <button id="darkbutton" style="font-size:25px;" onclick="darkMode()">DARKMODE TOGGLE</button>
+    <button id="date" style="font-size:25px;" onclick="dateTime()">Date TOGGLE</button>
+    <script>
+      function darkMode() {
+        var element = document.body;
+        var button = document.getElementById("darkbutton");
+        button.classList.toggle("dark-mode");
+        element.classList.toggle("dark-mode");
+      }
+      function dateTime() {
+        var element = document.getElementById("clock");
+        button.classList.toggle("show-clock");
+      }
+    </script>
+
 
 
     <div id = "Menu" class = "container-fluid text-center">
@@ -229,6 +246,24 @@
 
       <p>McDonalds &copy</p>
       <br/>
+      <DIV id="clock" style="font-size: 50px"></DIV>
+      <script>
+        function startTime() {
+          var today = new Date();
+          var h = today.getHours();
+          var m = today.getMinutes();
+          var s = today.getSeconds();
+          m = checkTime(m);
+          s = checkTime(s);
+          document.getElementById("clock").innerHTML =
+                  h + ":" + m + ":" + s;
+          var t = setTimeout(startTime, 500);
+        }
+        function checkTime(i) {
+          if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+          return i;
+        }
+      </script>
     </footer>
 
     <script src = "./js/client-side.js">
