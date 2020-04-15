@@ -1,0 +1,81 @@
+#McLogo{
+  width: 7.2vh;
+}
+
+#Richmond p {
+  display: inline-block;
+  font-weight: bold;
+}
+
+#Burnaby p {
+  display: inline-block;
+  font-weight: bold;
+}
+
+#Vancouver p {
+  display: inline-block;
+  font-weight: bold;
+}
+
+.maps{
+  width: 50%;
+  display: inline-block;
+}
+
+.dropdown-menu{
+  background-color: #333333;
+}
+
+.dropdown-menu li a{
+  color: #FFFFFF;
+}
+
+.jumbotron{
+  background-color: #FFFFFF;
+}
+
+.submenu ul {
+  list-style-type: none;
+  text-align: center;
+  padding-right: 34px;
+  font-weight: bold;
+}
+
+.sliders{
+  margin: 0;
+}
+
+#footy{
+  background-color: #000000;
+  color: #FFFFFF;
+}
+
+
+button{
+  background-color: #000000;
+  color:#FFFFFF;
+}
+
+.thumbnails{
+  width: 50%;
+  height: 21%;
+  border-radius: 15px;
+
+}
+
+.thumbnails:hover{
+  cursor: pointer;
+}
+
+.hover_img a { position:relative; }
+.hover_img a span { position:absolute; display:none; z-index:99; }
+.hover_img a:hover span { display:block; }
+
+.dark-mode {
+  background-color: black;
+  color: white;
+}
+
+.show-clock {
+  display: none;
+}
