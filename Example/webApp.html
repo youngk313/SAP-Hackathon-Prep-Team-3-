@@ -3,7 +3,7 @@
     <title>Fancy McDonalds</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    <script src = "./js/client-side.js"></script>
     <!-- Latest compiled and minified CSS -->
 
     <link rel="stylesheet" href="./css/stylish.css">
@@ -33,34 +33,28 @@
     <nav class = "navbar navbar-inverse navbar-fixed-top">
       <div class = "container-fluid">
         <div class = "navbar-header">
-          <a class = "navbar-brand" href = "#"><img src = "./images/logobandw.png" alt = "logo" id="McLogo" class = "img-circle"></a>
+          <a class = "navbar-brand" href = "www.sap.com"><img src = "./images/sap_icon.png" alt = "logo" id="McLogo" class = "img-circle"></a>
         </div>
 
         <ul class = "nav navbar-nav text-center">
           <li class = "dropdown">
-            <a class = "dropdown-toggle" data-toggle = "dropdown" href="#"><h4>Menu</h4><span class ="caret"></span></a>
+            <a class = "dropdown-toggle" data-toggle = "dropdown" href="#"><img src = "./images/burger_menu.svg.png" alt = "logo" id="McLogo" class = "img-circle"></a>
             <ul class = "dropdown-menu">
-              <li><a href = "#Breakfast">Breakfast</a></li>
-              <li><a href = "#Burgers">Burgers</a></li>
-              <li><a href = "#Desserts">Desserts</a></li>
-              <li><a href = "#Drinks">Drinks</a></li>
-              <li><a href = "#SandS">Snacks & Sides</a></li>
-
+              <li><a href = "" target="_blank">Another Page</a></li>
             </ul>
           </li>
              <li class = "dropdown">
-            <a class = "dropdown-toggle" data-toggle = "dropdown" href="#"><h4>Locations</h4><span class ="caret"></span></a>
+            <a class = "dropdown-toggle" data-toggle = "dropdown" href="#"><h4>Locations</h4></a>
             <ul class = "dropdown-menu">
               <li><a href = "#Vancouver">Vancouver</a></li>
               <li><a href = "#Burnaby">Burnaby</a></li>
               <li><a href = "#Richmond">Richmond</a></li>
             </ul>
-          <li class = "active"><a href="#Contact"> <h4> Contact </h4></a></li>
         </ul>
       </div>
     </nav>
 
-    <div id = "sliding" class ="carousel slide" data-ride ="carousel">
+    <div id = "sliding" class ="carousel slide carousel-fade" data-ride ="carousel">
       <!--Indicators-->
       <ol class ="carousel-indicators">
         <li data-target="#sliding" data-slide-to="0" class = "active"></li>
@@ -97,11 +91,42 @@
       </a>
     </div>
     <div class = "jumbotron text-center">
-      <h1>I'm Mclovin' it </h1>
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+  		Click me!
+	  </button>
+
+		<!-- Modal -->
+		<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		  <div class="modal-dialog" role="document">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <h5 class="modal-title" id="exampleModalLabel">Hey it's a modal!</h5>
+		        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+		          <span aria-hidden="true">&times;</span>
+		        </button>
+		      </div>
+		      <div class="modal-body">
+		        <img src = "./images/dog-meme.jpg" alt = "logo" id="dog-meme" style ="width:50%">
+		      </div>
+		      <div class="modal-footer">
+		        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+		        <button type="button" class="btn btn-primary">Save changes</button>
+		      </div>
+		    </div>
+		  </div>
+		</div>
 
     </div>
     <iframe width="560" height="315" src="https://www.youtube.com/embed/oHg5SJYRHA0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     <iframe src="https://open.spotify.com/embed/album/4jGOUUBc1J5d6EYlNuPIaa" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+
+    <div id = "cardCounter"></div>
+    <div id = "drawnCard"></div>
+    <button id = "deck" type="button" class="btn btn-primary" data-dismiss="modal">New Deck</button>
+    <button id = "card" type="button" class="btn btn-primary" data-dismiss="modal">New Card</button>
+    <button id = "reshuffle" type="button" class="btn btn-primary" data-dismiss="modal">Reshuffle</button>
+
+
     <div class="hover_img" style="font-size:50px">
       <a href="#">SHOWS IMAGE ON HOVER<span><img src="images/doggo.jpg" alt="image" height="100" /></span></a>
     </div>
@@ -125,9 +150,29 @@
 
 
 
+
     <div id = "Menu" class = "container-fluid text-center">
       <h2>Menu</h2>
       <br>
+
+      <input id="searchbar" onsearch="send_request_NASA()" type="text"
+        name="search" placeholder="Search NASA images and videos...." >
+        <script>
+          function send_request_NASA() {
+            fetch("https://images-api.nasa.gov/search?q=")
+            .then(function(response) {
+              // SUCCESS RESPONSE
+              let image1href = response.collection.items[1].links[1].href;
+              })
+              .catch(function(response) {
+              // FAILURE RESPONSE
+                console.log('Error! Please try again');
+              });
+          }
+        </script>
+        <br>
+        <img src= image1href alt = "searchImage" >
+
       <div class ="row">
         <div id = "Breakfast" class = "col-sm-4">
           <h4>Breakfast</h4>
@@ -236,17 +281,8 @@
     <footer id = "footy" class = "text-center">
       <br/>
       <a class = "up-arrow" href ="#homePage" data-toggle="tooltip" title = "TO TOP"><span style ="color:white" class ="glyphicon glyphicon-chevron-up"></span></a><br/><br/>
-      <p>Corporate Policy &emsp; | &emsp; Terms & Conditions &emsp; | &emsp; Accessibility</p>
-      <div class = "container-fluid">
-        <h4 style="display:inline-block">Stay Connected &emsp;</h4>
-          <img style ="width:3vh" src = "./images/facebook.png" alt ="facebook" class = "img-circle">
-          <img style ="width:3vh" src = "./images/twitter.png" alt = "twitter" class = "img-circle">
-          <img style ="width:3vh" src = "./images/insta.png" alt = "instagram" class = "img-circle">
-           <img style ="width:3vh" src = "./images/pinterest.png" alt = "pinterest" class = "img-circle">
-      </div>
+      <p>Team #3: Herbert, Ming, Young, Taranjot</p>
       <br/>
-
-      <p>McDonalds &copy</p>
       <br/>
       <DIV id="clock" style="font-size: 50px"></DIV>
       <script>

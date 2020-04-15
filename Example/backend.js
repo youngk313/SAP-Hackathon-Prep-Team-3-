@@ -58,85 +58,11 @@ app.get('/ajax-GET-list', function (req, res) {
     let formatOfResponse = req.query['format'];
     let dataList = null;
 
-    if(formatOfResponse == 'burger-list') {
+    if(formatOfResponse == 'deckOfCards') {
 
         res.setHeader('Content-Type', 'text/html');
         res.setHeader('X-Powered-By','McDonalds');
         dataList = lists.getburgers();
-        res.send(dataList);
-
-    } else if(formatOfResponse == 'salad-list') {
-
-        res.setHeader('Content-Type', 'text/html');
-        res.setHeader('X-Powered-By','McDonalds');
-        dataList = lists.getSalads();
-        res.send(dataList);
-
-    } else if(formatOfResponse == 'salad-facts') {
-
-        res.setHeader('Content-Type', 'application/json');
-        res.setHeader('X-Powered-By','McDonalds');
-        dataList = lists.getSaladfacts();
-        res.send(dataList);
-
-    } else if(formatOfResponse == 'side-list') {
-
-        res.setHeader('Content-Type', 'text/html');
-        res.setHeader('X-Powered-By','McDonalds');
-        dataList = lists.getSides();
-        res.send(dataList);
-
-    } else if(formatOfResponse == 'side-facts') {
-
-        res.setHeader('Content-Type', 'application/json');
-        res.setHeader('X-Powered-By','McDonalds');
-        dataList = lists.getSidefacts();
-        res.send(dataList);
-
-    } else if(formatOfResponse == 'drink-list') {
-
-        res.setHeader('Content-Type', 'text/html');
-        res.setHeader('X-Powered-By','McDonalds');
-        dataList = lists.getdrinks();
-        res.send(dataList);
-
-    } else if(formatOfResponse == 'dessert-list') {
-
-        res.setHeader('Content-Type', 'text/html');
-        res.setHeader('X-Powered-By','McDonalds');
-        dataList = lists.getDesserts();
-        res.send(dataList);
-
-    } else if(formatOfResponse == 'dessert-facts') {
-
-        res.setHeader('Content-Type', 'application/json');
-        res.setHeader('X-Powered-By','McDonalds');
-        dataList = lists.getDessertfacts();
-        res.send(dataList);
-
-    } else if(formatOfResponse == 'breaky-list') {
-
-        res.setHeader('Content-Type', 'text/html');
-        res.setHeader('X-Powered-By','McDonalds');
-        dataList = lists.getbreakfasts();
-        res.send(dataList);
-
-    } else if(formatOfResponse == 'burger-facts') {
-
-        res.setHeader('Content-Type', 'application/json');
-        dataList = lists.getburgfacts();
-        res.send(dataList);
-
-    } else if(formatOfResponse == 'drink-facts') {
-
-        res.setHeader('Content-Type', 'application/json');
-        dataList = lists.getdrinkfacts();
-        res.send(dataList);
-
-    } else if(formatOfResponse == 'breaky-facts') {
-
-        res.setHeader('Content-Type', 'application/json');
-        dataList = lists.getbreakyfacts();
         res.send(dataList);
 
     } else {
