@@ -1,2 +1,3 @@
 # SAP-Hackathon-Prep-Team-3-
-# hello world
+
+Team Members: Young, Ming, HErbert, Taranjot
