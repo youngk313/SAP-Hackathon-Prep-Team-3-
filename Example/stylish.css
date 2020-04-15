@@ -1,0 +1,40 @@
+#McLogo{
+  width: 7.2vh;
+}
+
+.maps{
+  width: 100px;
+}
+
+.dropdown-menu{
+  background-color: #333333;
+}
+
+.dropdown-menu li a{
+  color: #FFFFFF;
+}
+
+.jumbotron{
+  background-color: #FFFFFF;
+}
+
+.sliders{
+  margin: 0;
+}
+
+#footy{
+  background-color: #000000;
+  color: #FFFFFF;
+}
+
+
+button{
+  background-color: #000000;
+  color:#FFFFFF;
+}
+
+.thumbnails{
+  width: 50%;
+  height: 20%;
+  border-radius: 15px;
+}
