@@ -1,5 +1,7 @@
 $(document).ready(function() {
 
+
+
     // CONTACT THE SERVER AND GET THE DATE FROM THE SERVER
     $('#homePage').ready(function(e) {
 
